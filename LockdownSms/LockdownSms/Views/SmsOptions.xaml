@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:LockdownSms.ViewModels"
+             x:Class="LockdownSms.Views.SmsOptions">
+    <ContentPage.BindingContext>
+        <vm:SmsOptionsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout>
+                <Button Margin="0,10,0,0" Text="Μετάβαση σε φαρμακείο ή επίσκεψη στον γιατρό" Command="{Binding SendSmsCommand}" CommandParameter="1" />
+                <Button Margin="0,10,0,0" Text="Μετάβαση σε εν λειτουργία κατάστημα προμηθειών αγαθών πρώτης ανάγκης (σούπερ μάρκετ, μίνι μάρκετ)" Command="{Binding SendSmsCommand}" CommandParameter="2" />
+                <Button Margin="0,10,0,0" Text="Μετάβαση στην τράπεζα" Command="{Binding SendSmsCommand}" CommandParameter="3" />
+                <Button Margin="0,10,0,0" Text="Κίνηση για παροχή βοήθειας σε ανθρώπους που βρίσκονται σε ανάγκη" Command="{Binding SendSmsCommand}" CommandParameter="4" />
+                <Button Margin="0,10,0,0" Text="Μετάβαση σε τελετή (π.χ. κηδεία, γάμος, βάφτιση)" Command="{Binding SendSmsCommand}" CommandParameter="5" />
+                <Button Margin="0,10,0,0" Text="Σωματική άσκηση σε εξωτερικό χώρο ή κίνηση με κατοικίδιο ζώο" Command="{Binding SendSmsCommand}" CommandParameter="6" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

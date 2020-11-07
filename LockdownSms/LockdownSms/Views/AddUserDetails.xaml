@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:LockdownSms.ViewModels"
+             x:Class="LockdownSms.Views.AddUserDetails">
+    <ContentPage.BindingContext>
+        <vm:AddUserDetailsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout>
+                <Label Text="First name"/>
+                <Entry Text="{Binding FirstName}"></Entry>
+                <Label Text="Last name"/>
+                <Entry Text="{Binding LastName}"></Entry>
+                <Label Text="Address"/>
+                <Editor Text="{Binding Address}"></Editor>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <!--<Button HorizontalOptions="Start" Text="Cancel" Command="{Binding CancelCommand}" />-->
+                    <Button HorizontalOptions="Center" Text="Save" Command="{Binding SaveCommand}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
