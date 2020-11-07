@@ -16,7 +16,6 @@
                 <Label Text="Address"/>
                 <Editor Text="{Binding Address}"></Editor>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <!--<Button HorizontalOptions="Start" Text="Cancel" Command="{Binding CancelCommand}" />-->
                     <Button HorizontalOptions="Center" Text="Save" Command="{Binding SaveCommand}" />
                 </StackLayout>
             </StackLayout>

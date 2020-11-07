@@ -1,14 +1,17 @@
 ﻿using LockdownSms.Models;
 using LockdownSms.Views;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace LockdownSms.ViewModels
 {
+    [QueryProperty(nameof(UserId), nameof(UserId))]
     public class AddUserDetailsViewModel : BaseViewModel
     {
+        private string userId;
         private string firstName;
         private string lastName;
         private string address;
@@ -19,6 +22,28 @@ namespace LockdownSms.ViewModels
             CancelCommand = new Command(OnCancel);
             this.PropertyChanged +=
                 (_, __) => SaveCommand.ChangeCanExecute();
+        }
+
+        public string UserId
+        {
+            get
+            {
+                return userId;
+            }
+            set
+            {
+                userId = value;
+                LoadUser(value);
+            }
+
+        }
+
+        private async void LoadUser(string userId)
+        {
+            var user = await App.Database.GetItemAsync(userId);
+            this.FirstName = user.FirstName;
+            this.LastName = user.LastName;
+            this.Address = user.Address;
         }
 
         public string FirstName
@@ -59,17 +84,35 @@ namespace LockdownSms.ViewModels
 
         private async void OnSave()
         {
-            await App.Database.AddItemAsync(new User { 
-                Id = Guid.NewGuid().ToString(),
-                FirstName = FirstName,
-                LastName = LastName,
-                Address = Address
-            });
+            if (string.IsNullOrWhiteSpace(this.UserId))
+            {
+                await App.Database.AddItemAsync(new User
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    FirstName = FirstName,
+                    LastName = LastName,
+                    Address = Address
+                });                
+            }
+            else
+            {
+                await App.Database.UpdateItemAsync(new User
+                {
+                    Id = this.UserId,
+                    FirstName = FirstName,
+                    LastName = LastName,
+                    Address = Address
+                });
+
+                
+            }
+
+            await Shell.Current.GoToAsync(nameof(SmsOptions));
 
             // This will pop the current page off the navigation stack
-            //await Shell.Current.GoToAsync(nameof(SmsOptions));
 
-            MessagingCenter.Send<string>("AddUserDetailsViewModel", "Change");
+
+            //MessagingCenter.Send<string>("AddUserDetailsViewModel", "Change");
         }
     }
 }

@@ -16,5 +16,20 @@ namespace LockdownSms.Views
         {
             InitializeComponent();
         }
+
+        protected override async void OnAppearing()
+        {
+            
+            var users = await App.Database.GetItemsAsync();
+
+            if (users.Count() > 0)
+            {
+                base.OnAppearing();
+            }
+            else
+            {
+                await Shell.Current.GoToAsync(nameof(AddUserDetails));
+            }
+        }
     }
 }
