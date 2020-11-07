@@ -2,14 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:LockdownSms.ViewModels"
-             x:Class="LockdownSms.Views.SmsOptions">
+             x:Class="LockdownSms.Views.SmsOptions" Visual="Material">
     <ContentPage.BindingContext>
         <vm:SmsOptionsViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
             <StackLayout>
-                <Button Margin="0,10,0,0" Text="Μετάβαση σε φαρμακείο ή επίσκεψη στον γιατρό" Command="{Binding SendSmsCommand}" CommandParameter="1" />
+                <Button Margin="0,10,0,0" Text="ΜΕΤΑΒΑΣΗ ΣΕ ΦΑΡΜΑΚΕΙΟ Ή ΕΠΙΣΚΕΨΗ ΣΤΟΝ ΓΙΑΤΡΟ" Command="{Binding SendSmsCommand}" CommandParameter="1" />
                 <Button Margin="0,10,0,0" Text="Μετάβαση σε εν λειτουργία κατάστημα προμηθειών αγαθών πρώτης ανάγκης (σούπερ μάρκετ, μίνι μάρκετ)" Command="{Binding SendSmsCommand}" CommandParameter="2" />
                 <Button Margin="0,10,0,0" Text="Μετάβαση στην τράπεζα" Command="{Binding SendSmsCommand}" CommandParameter="3" />
                 <Button Margin="0,10,0,0" Text="Κίνηση για παροχή βοήθειας σε ανθρώπους που βρίσκονται σε ανάγκη" Command="{Binding SendSmsCommand}" CommandParameter="4" />

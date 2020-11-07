@@ -14,7 +14,7 @@ namespace LockdownSms.Views
     {
         public AddUserDetails()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
     }
 }
