@@ -9,15 +9,13 @@
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
             <StackLayout>
-                <Label Text="First name"/>
-                <Entry Text="{Binding FirstName}"></Entry>
-                <Label Text="Last name"/>
-                <Entry Text="{Binding LastName}"></Entry>
-                <Label Text="Address"/>
-                <Editor Text="{Binding Address}"></Editor>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Button HorizontalOptions="Center" Text="Save" Command="{Binding SaveCommand}" />
-                </StackLayout>
+                <Entry Placeholder="First name" Text="{Binding FirstName}"></Entry>
+
+                <Entry Placeholder="Last name" Text="{Binding LastName}"></Entry>
+                
+                <Editor Placeholder="Address" Text="{Binding Address}"></Editor>
+
+                <Button HorizontalOptions="Center" Text="Save" Command="{Binding SaveCommand}" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

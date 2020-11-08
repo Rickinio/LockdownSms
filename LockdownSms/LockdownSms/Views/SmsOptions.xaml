@@ -9,12 +9,12 @@
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
             <StackLayout>
-                <Button Margin="0,10,0,0" Text="ΜΕΤΑΒΑΣΗ ΣΕ ΦΑΡΜΑΚΕΙΟ Ή ΕΠΙΣΚΕΨΗ ΣΤΟΝ ΓΙΑΤΡΟ" Command="{Binding SendSmsCommand}" CommandParameter="1" />
-                <Button Margin="0,10,0,0" Text="Μετάβαση σε εν λειτουργία κατάστημα προμηθειών αγαθών πρώτης ανάγκης (σούπερ μάρκετ, μίνι μάρκετ)" Command="{Binding SendSmsCommand}" CommandParameter="2" />
-                <Button Margin="0,10,0,0" Text="Μετάβαση στην τράπεζα" Command="{Binding SendSmsCommand}" CommandParameter="3" />
-                <Button Margin="0,10,0,0" Text="Κίνηση για παροχή βοήθειας σε ανθρώπους που βρίσκονται σε ανάγκη" Command="{Binding SendSmsCommand}" CommandParameter="4" />
-                <Button Margin="0,10,0,0" Text="Μετάβαση σε τελετή (π.χ. κηδεία, γάμος, βάφτιση)" Command="{Binding SendSmsCommand}" CommandParameter="5" />
-                <Button Margin="0,10,0,0" Text="Σωματική άσκηση σε εξωτερικό χώρο ή κίνηση με κατοικίδιο ζώο" Command="{Binding SendSmsCommand}" CommandParameter="6" />
+                <Button Margin="0,10,0,0" Text="1. ΜΕΤΑΒΑΣΗ ΣΕ ΦΑΡΜΑΚΕΙΟ Ή ΕΠΙΣΚΕΨΗ ΣΤΟΝ ΓΙΑΤΡΟ" Command="{Binding SendSmsCommand}" CommandParameter="1" />
+                <Button Margin="0,10,0,0" Text="2. ΜΕΤΑΒΑΣΗ ΣΕ ΕΝ ΛΕΙΤΟΥΡΓΙΑ ΚΑΤΑΣΤΗΜΑ ΠΡΟΜΗΘΕΙΩΝ ΑΓΑΘΩΝ ΠΡΩΤΗΣ ΑΝΑΓΚΗΣ (ΣΟΥΠΕΡ ΜΑΡΚΕΤ, ΜΙΝΙ ΜΑΡΚΕΤ)" Command="{Binding SendSmsCommand}" CommandParameter="2" />
+                <Button Margin="0,10,0,0" Text="3. ΜΕΤΑΒΑΣΗ ΣΤΗΝ ΤΡΑΠΕΖΑ" Command="{Binding SendSmsCommand}" CommandParameter="3" />
+                <Button Margin="0,10,0,0" Text="4. ΚΙΝΗΣΗ ΓΙΑ ΠΑΡΟΧΗ ΒΟΗΘΕΙΑΣ ΣΕ ΑΝΘΡΩΠΟΥΣ ΠΟΥ ΒΡΙΣΚΟΝΤΑΙ ΣΕ ΑΝΑΓΚΗ" Command="{Binding SendSmsCommand}" CommandParameter="4" />
+                <Button Margin="0,10,0,0" Text="5. ΜΕΤΑΒΑΣΗ ΣΕ ΤΕΛΕΤΗ (Π.Χ. ΚΗΔΕΙΑ, ΓΑΜΟΣ, ΒΑΦΤΙΣΗ)" Command="{Binding SendSmsCommand}" CommandParameter="5" />
+                <Button Margin="0,10,0,0" Text="6. ΣΩΜΑΤΙΚΗ ΑΣΚΗΣΗ ΣΕ ΕΞΩΤΕΡΙΚΟ ΧΩΡΟ Ή ΚΙΝΗΣΗ ΜΕ ΚΑΤΟΙΚΙΔΙΟ ΖΩΟ)" Command="{Binding SendSmsCommand}" CommandParameter="6" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
