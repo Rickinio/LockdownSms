@@ -33,7 +33,10 @@ namespace LockdownSms.ViewModels
             set
             {
                 userId = value;
-                LoadUser(value);
+                if (value != null)
+                {
+                    LoadUser(value);
+                }
             }
 
         }
@@ -79,7 +82,7 @@ namespace LockdownSms.ViewModels
             // This will pop the current page off the navigation stack
             //await Shell.Current.GoToAsync(nameof(SmsOptions));
 
-            MessagingCenter.Send<string>("AddUserDetailsViewModel", "Change");
+            //MessagingCenter.Send<string>("AddUserDetailsViewModel", "Change");
         }
 
         private async void OnSave()
@@ -107,6 +110,7 @@ namespace LockdownSms.ViewModels
                 
             }
 
+            //await Shell.Current.Navigation.PopToRootAsync();
             await Shell.Current.GoToAsync(nameof(SmsOptions));
 
             // This will pop the current page off the navigation stack

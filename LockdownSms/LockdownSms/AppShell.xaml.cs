@@ -15,7 +15,6 @@ namespace LockdownSms
 
             Routing.RegisterRoute(nameof(AddUserDetails), typeof(AddUserDetails));
             Routing.RegisterRoute(nameof(SmsOptions), typeof(SmsOptions));
-
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
@@ -23,7 +22,9 @@ namespace LockdownSms
             var users = await App.Database.GetItemsAsync();
             var user = users.FirstOrDefault();
 
-            await Shell.Current.GoToAsync($"//AddUserDetails?UserId={user.Id}");
+            //await Shell.Current.GoToAsync($"//AddUserDetails?UserId={user.Id}");
+            await Shell.Current.GoToAsync($"AddUserDetails?UserId={user?.Id}");
+            Shell.Current.FlyoutIsPresented = false;
         }        
     }
 }

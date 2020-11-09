@@ -21,6 +21,12 @@ namespace LockdownSms.ViewModels
             try
             {
                 var users = (await App.Database.GetItemsAsync()).FirstOrDefault();
+
+                //if (users == null)
+                //{
+                //    await Shell.Current.GoToAsync($"AddUserDetails");
+                //}
+
                 var smsText = $"{option} {users.FirstName} {users.LastName} {users.Address}";
 
                 var message = new SmsMessage(smsText, new[] { "13033" });
